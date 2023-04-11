@@ -1,40 +1,26 @@
 import './categories.style.scss'
-import CategoryMain from './components/categories-main/category-main.component';
+import Home from './routes/home/home.component';
+import { Route, Routes} from 'react-router-dom'
+import Navigation from './routes/navigation/navigation.component';
+import SIGNIN from './routes/signin/signin.component';
 
-const categories = [
-  {
-    "id": 1,
-    "title": "hats",
-    "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
-  },
-  {
-    "id": 2,
-    "title": "jackets",
-    "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
-  },
-  {
-    "id": 3,
-    "title": "sneakers",
-    "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
-  },
-  {
-    "id": 4,
-    "title": "womens",
-    "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
-  },
-  {
-    "id": 5,
-    "title": "mens",
-    "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
-  }
-]
+
+const SHOP = () => {
+  return (
+    <p>We are shopper</p>
+  )
+}
 
 
 const App = () => {
   return (
-      <div>
-        <CategoryMain categories={categories}/>
-      </div>
+      <Routes>
+        <Route path='/' element={<Navigation/>}>
+          <Route index element={<Home/>}/>
+          <Route path='shop' element={<SHOP/>}/>
+          <Route path='signin' element={ <SIGNIN/>}/>
+        </Route>
+      </Routes>
   );
 }
 
