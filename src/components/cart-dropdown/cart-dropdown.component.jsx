@@ -6,10 +6,11 @@ import { CartContext } from '../../context/cart.context';
 
 
 const CartDropDown = () => {
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, cartCount } = useContext(CartContext);
 
     return (
         <div className='cart-dropdown-container'>
+            {!cartCount && <span className='empty-message'>You Cart is currently empty</span>}
             <div className='cart-items'>
                 {cartItems.map(item => <CartItem key={item.id} cartItem={item}/>)}
                  </div>
