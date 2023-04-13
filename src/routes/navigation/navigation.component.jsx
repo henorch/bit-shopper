@@ -9,14 +9,14 @@ import { CartContext } from "../../context/cart.context"
 
 
 const Navigation  = () => {
-  const { currentUser,setCurrentUser } = useContext(UserContext)
+  const { currentUser, setCurrentUser } = useContext(UserContext)
   const { isCartOpen } = useContext(CartContext); 
+  
   const signoutHandler = async () => {
     const resp = await SignOutUser()
     setCurrentUser(null)
   } 
 
-  console.log(isCartOpen);
     return(
       <Fragment>
         <div className="navigation">
