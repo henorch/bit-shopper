@@ -1,16 +1,18 @@
-import './authentication.styles.scss'
+import { AuthContainer } from './authentication.styles'
+
+
 import SignIn  from '../../components/sign-in/sign-in.component'
 import  SignUp  from '../../components/sign-up/sign-up.component'
 
 const Authentication  = () => {
     return  (
-    <div>
+    <>
         <h2>Welcome to BitShopper</h2>
-        <div className="auth-container">
+        <AuthContainer>
         <SignIn/>
         <SignUp/>
-        </div>
-    </div>
+        </AuthContainer>
+    </>
     )
 }
 

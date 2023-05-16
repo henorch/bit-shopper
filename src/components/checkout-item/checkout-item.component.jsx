@@ -5,7 +5,7 @@ import Button from '../button/button.component'
 
 const CheckoutItem = ({ cartItem }) => {
 
-    const { addItemToCart, removeItemFromCart } = useContext(CartContext)
+    const { addItemToCart, removeItemFromCart, clearItemFromCart } = useContext(CartContext)
     const { name, imageUrl, quantity, price }  = cartItem;
     return(
         <div className='checkout-item-container'>
@@ -17,7 +17,7 @@ const CheckoutItem = ({ cartItem }) => {
             <span className='quantity'><span className='value' onClick={()=> addItemToCart(cartItem)}>+</span>{quantity}<span className='value' onClick={()=> removeItemFromCart(cartItem)}>-</span></span> 
             
             <span className='price'>{price}</span>
-            <div className='remove-button'>&#10005;</div>
+            <div className='remove-button' onClick={()=> clearItemFromCart(cartItem)}>&#10005;</div>
          </div>
     )
 }

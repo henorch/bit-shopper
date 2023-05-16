@@ -1,9 +1,10 @@
 import { useState, useContext } from "react";
-import './sign-up.styles.scss';
+import './sign-up.styles.jsx';
 import { createAuthUSerEmailandPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 import { UserContext } from "../../context/user.context";
 import FormInput from "../Form/form.components";
 import Button from "../button/button.component";
+import { SignUpContainer, h2 } from "./sign-up.styles";
 
 const defaultFieldVale = {
     displayName:"",
@@ -47,7 +48,7 @@ const SignUp = ()=>{
     }
 
     return(
-        <div className="sign-up-container">
+        <SignUpContainer>
             <h2>Sign Up</h2>
             <span>create an account with your email</span>
             <form onSubmit={handleSubmit}>
@@ -86,7 +87,7 @@ const SignUp = ()=>{
 
                     <Button type="submit">SUBMIT</Button>
             </form>
-        </div>
+        </SignUpContainer>
     )
 }
 

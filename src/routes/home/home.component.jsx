@@ -33,6 +33,7 @@ const categories = [
 const Home = () => {
   return (
       <div>
+        <p>~Peace</p>
         <CategoryMain categories={categories}/>
       </div>
   );
